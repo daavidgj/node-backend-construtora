@@ -16,7 +16,6 @@ const apartamentoSchema = new mongoose.Schema({
     quartos: Number,
     banheiros: Number,
     garagem: Number,
-    valorCondominio: Number,
     idBloco: { type: mongoose.Schema.Types.ObjectId, ref: "Bloco" },
 });
 

@@ -1,0 +1,147 @@
+API REST - Sistema Imobiliário
+Descrição
+
+API REST desenvolvida em Node.js e Express, simulando um sistema imobiliário que gerencia construtoras, condomínios, blocos, apartamentos e moradores.
+O projeto demonstra conceitos de rotas REST, métodos HTTP, validação de dados, respostas estruturadas em JSON, uso de Git para versionamento e documentação com Postman.
+
+Tecnologias Utilizadas
+
+Node.js
+
+Express.js
+
+MongoDB (via Mongoose)
+
+Postman (para teste e documentação das rotas)
+
+Git/GitHub (versionamento e colaboração)
+
+Instalação e Execução
+
+Clone o repositório:
+
+git clone https://github.com/daavidgj/node-backend-construtora.git
+
+Entre na pasta do projeto:
+
+cd nome-do-projeto
+
+Instale as dependências:
+
+npm install
+
+Execute a API:
+
+npm start
+
+A API estará disponível em:
+
+http://localhost:3000
+
+Endpoints
+
+Link de acesso ao Postman->
+
+https://davidgj201-390019.postman.co/workspace/David-Gon%C3%A7alves's-Workspace~dce9806a-620e-41a1-81be-f38ca0546c3e/collection/48692277-857cf06d-6ee0-4ba9-beb1-52eafc339eea?action=share&creator=48692277
+
+1. Construtora
+
+GET /construtora/all → Listar todas as construtoras
+
+GET /construtora/:id → Buscar construtora por ID (com condomínios e blocos)
+
+POST /construtora → Criar nova construtora
+
+PUT /construtora/:id → Atualizar construtora
+
+DELETE /construtora/:id → Deletar construtora
+
+2. Condomínio
+
+GET /construtora/:id/condominio/all → Listar todos os condomínios de uma construtora
+
+GET /condominio/:id → Buscar condomínio por ID (com blocos)
+
+POST /construtora/:id/condominio → Criar condomínio
+
+PUT /condominio/:id → Atualizar condomínio
+
+DELETE /condominio/:id → Deletar condomínio
+
+3. Bloco
+
+GET /condominio/:id/bloco/all → Listar blocos de um condomínio
+
+GET /condominio/bloco/:id → Buscar bloco por ID
+
+POST /condominio/:id/bloco → Criar bloco
+
+PUT /condominio/bloco/:id → Atualizar bloco
+
+DELETE /condominio/bloco/:id → Deletar bloco
+
+4. Apartamento
+
+GET /condominio/bloco/apartamento/:id → Buscar apartamento por ID
+
+POST /condominio/bloco/:idBloco/apartamento → Criar apartamento
+
+PUT /condominio/bloco/apartamento/:id → Atualizar apartamento
+
+DELETE /condominio/bloco/apartamento/:id → Deletar apartamento
+
+5. Morador
+
+GET /morador/:cpf → Buscar morador por CPF (com apartamentos)
+
+POST /condominio/bloco/apartamento/:idApartamento/morador → Cadastrar morador
+
+PUT /morador/:cpf → Atualizar morador
+
+DELETE /morador/:cpf → Deletar morador
+
+########################
+#########Exemplos#######
+########################
+
+Exemplos de Requisição (JSON)
+Criar Construtora
+POST /construtora
+{
+"nome": "Construtora Exemplo",
+"telefone": "11999999999"
+}
+
+Criar Condomínio
+POST /construtora/:id/condominio
+{
+"nome": "Condomínio Central",
+"endereco": "Rua Principal, 123"
+}
+
+Criar Bloco
+POST /condominio/:id/bloco
+{
+"nome": "Bloco A",
+"andares": 5,
+"elevadores": 2,
+"escada": "Sim"
+}
+
+Criar Apartamento
+POST /condominio/bloco/:idBloco/apartamento
+{
+"numero": 101,
+"metragem": 75,
+"quartos": 2,
+"banheiros": 1,
+"garagem": 1
+}
+
+Criar Morador
+POST /condominio/bloco/apartamento/:idApartamento/morador
+{
+"nome": "João Silva",
+"cpf": "12345678901",
+"telefone": "11988888888"
+}

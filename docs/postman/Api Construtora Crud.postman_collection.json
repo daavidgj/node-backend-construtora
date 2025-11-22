@@ -1,0 +1,1289 @@
+{
+	"info": {
+		"_postman_id": "857cf06d-6ee0-4ba9-beb1-52eafc339eea",
+		"name": "Api Construtora Crud",
+		"description": "# Sistema de Construtoras / Condomínios\n\nEste sistema gerencia desde funções básicas até funcionalidades mais avançadas de um condomínio:\n\n## Estrutura\n\n- **Construtora**\n    \n    - **Condomínio**\n        \n        - **Funcionários**\n            \n        - Blocos\n            \n            - **Apartamentos**\n                \n                - **Moradores / Donos**\n                    \n                - **Visitantes**\n                    \n                - Encomendas\n                    \n            - **Catracas**\n                \n            - Espaços\n                \n\n## Funcionalidades principais\n\n- **CRUD de Blocos e Apartamentos** – gestão básica de unidades.\n    \n- **Funcionários** – controle de dados complexos, incluindo salários e benefícios para o RH.\n    \n- **Encomendas** – registro e acompanhamento de entregas para apartamentos.\n    \n- **Sistema de entrada e saída** – controle de moradores e visitantes através das catracas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48692277",
+		"_collection_link": "https://davidgj201-390019.postman.co/workspace/David-Gon%C3%A7alves's-Workspace~dce9806a-620e-41a1-81be-f38ca0546c3e/collection/48692277-857cf06d-6ee0-4ba9-beb1-52eafc339eea?action=share&source=collection_link&creator=48692277"
+	},
+	"item": [
+		{
+			"name": "Get - Todas as Construtoras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/construtora/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Construtora Específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/construtora/68de05d8068672f1b4ca6d15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						"68de05d8068672f1b4ca6d15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Construtora Específica",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"David Prédios\",\r\n    \"telefone\":312321312313\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/construtora/69211ed1c4963789f5c0ace0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						"69211ed1c4963789f5c0ace0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Construtora Específica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Construções Nova\",\r\n    \"telefone\":3213312312,\r\n    \"ativo\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/construtora/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Construtora Específica",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Construções Nova\",\r\n    \"telefone\":3213312312,\r\n    \"ativo\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/construtora/68e07815dd4cc5f735046e5e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						"68e07815dd4cc5f735046e5e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Todos os Condomínios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/construtora/68de05d8068672f1b4ca6d15/condominio/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						"68de05d8068672f1b4ca6d15",
+						"condominio",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Condomínio Específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de098634e2671c7936fbd5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de098634e2671c7936fbd5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Condomínio Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Condomínio Florido\",\r\n    \"endereco\":\"Qnj rua zion numero XV\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/construtora/69211ed1c4963789f5c0ace0/condominio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"construtora",
+						"69211ed1c4963789f5c0ace0",
+						"condominio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Condomínio Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Nova Moradiasaa\",\r\n    \"endereco\":\"Qnj 23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de098634e2671c7936fbd5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de098634e2671c7936fbd5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Condomínio Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/condominio/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Bloco Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Bloco Lótus11\",\r\n    \"andares\": 13,\r\n    \"elevadores\": 3,\r\n    \"escada\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de09a334e2671c7936fbd7/bloco",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de09a334e2671c7936fbd7",
+						"bloco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Bloco Específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Bloco Lótus\",\r\n    \"andares\": 18,\r\n    \"elevadores\": 3,\r\n    \"escada\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/68de09a334e2671c7936fbd7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"68de09a334e2671c7936fbd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Todos os Blocos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Bloco Lótus\",\r\n    \"andares\": 18,\r\n    \"elevadores\": 3,\r\n    \"escada\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de098634e2671c7936fbd5/bloco/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de098634e2671c7936fbd5",
+						"bloco",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Bloco Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Bloco Girassol Alterado\",\r\n    \"andares\": 18,\r\n    \"elevadores\": 3,\r\n    \"escada\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/69212095d9773d145dc6b0cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"69212095d9773d145dc6b0cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Bloco Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Bloco Girassol Alterado\",\r\n    \"andares\": 18,\r\n    \"elevadores\": 3,\r\n    \"escada\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/68df111aa4ec158097f588f1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"68df111aa4ec158097f588f1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Apartamento Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": 201,\r\n    \"metragem\": 46.5,\r\n    \"quartos\": 3,\r\n    \"banheiros\": 2,\r\n    \"garagem\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/68df1128a4ec158097f588f3/apartamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"68df1128a4ec158097f588f3",
+						"apartamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Apartamento Específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": 201,\r\n    \"metragem\": 46.5,\r\n    \"quartos\": 3,\r\n    \"banheiros\": 2,\r\n    \"garagem\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/apartamento/68e0890542604b7b4d2c16df",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"apartamento",
+						"68e0890542604b7b4d2c16df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Apartamento Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": 201,\r\n    \"metragem\": 46.5,\r\n    \"quartos\": 3,\r\n    \"banheiros\": 2,\r\n    \"garagem\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/apartamento/68e0890542604b7b4d2c16df",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"apartamento",
+						"68e0890542604b7b4d2c16df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Apartamento Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": 201,\r\n    \"metragem\": 46.5,\r\n    \"quartos\": 3,\r\n    \"banheiros\": 2,\r\n    \"garagem\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/apartamento/68e08abc2dcb52ae7232e0f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"apartamento",
+						"68e08abc2dcb52ae7232e0f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Morador Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Roberto\",\r\n    \"telefone\":\"982757636\",\r\n    \"cpf\":\"05809902117\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/bloco/apartamento/68e0890542604b7b4d2c16df/morador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"bloco",
+						"apartamento",
+						"68e0890542604b7b4d2c16df",
+						"morador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Morador Específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/morador/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"morador",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Morador Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Nome Novo\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/morador/05809902117",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"morador",
+						"05809902117"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Morador Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Nome Novo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/morador/100000000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"morador",
+						"100000000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Encomenda Específica",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Descrição\":\"Caixa Larga\",\r\n    \"endereco\":\"Qn3 conj Z rua 4\",\r\n    \"transportadora\":\"Correios\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/apartamento/68e0890542604b7b4d2c16df/encomenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apartamento",
+						"68e0890542604b7b4d2c16df",
+						"encomenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Encomenda Específica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\":\"Caixa Larga\",\r\n    \"endereco\":\"Qn3 conj Z rua 4\",\r\n    \"transportadora\":\"Correios\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/apartamento/68e0890542604b7b4d2c16df/encomenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apartamento",
+						"68e0890542604b7b4d2c16df",
+						"encomenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Encomenda Específica",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\":\"Caixa Verde\",\r\n    \"endereco\":\"qn zion q wrrd\",\r\n    \"transportadora\":\"Magazine Luiza\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/encomenda/692122513556a025d30c94ca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"encomenda",
+						"692122513556a025d30c94ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Encomenda Específica",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"endereco\":\"qn zion q wrrd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/encomenda/69209ce09d2152c2989fe96b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"encomenda",
+						"69209ce09d2152c2989fe96b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Espaço Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Salão de Festas 01\",\r\n    \"descricao\":\"Salão grande com cadeiras, geladeira e fogão\",\r\n    \"capacidade\":40,\r\n    \"taxaReserva\":20\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de09a334e2671c7936fbd7/espaco",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de09a334e2671c7936fbd7",
+						"espaco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Espaço Específico Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Salão de Festas 01\",\r\n    \"descricao\":\"Salão grande com cadeiras, geladeira e fogão\",\r\n    \"capacidade\":40,\r\n    \"taxaReserva\":20\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de09a334e2671c7936fbd7/espaco",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de09a334e2671c7936fbd7",
+						"espaco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Espaço Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Salão de Festas 01\",\r\n    \"descricao\":\"Salão grande com cadeiras, geladeira e fogão\",\r\n    \"capacidade\":20,\r\n    \"taxaReserva\":20\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/espaco/69212313c0f39319ae710af3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"espaco",
+						"69212313c0f39319ae710af3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Espaço Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Salão de Festas 01\",\r\n    \"descricao\":\"Salão grande com cadeiras, geladeira e fogão\",\r\n    \"capacidade\":20,\r\n    \"taxaReserva\":20\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/espaco/69210ad41753d578d1ce053d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"espaco",
+						"69210ad41753d578d1ce053d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Funcionario Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Gustavo\",\r\n    \"cpf\":\"09323432279\",\r\n    \"cargo\":\"Jardineiro\",\r\n    \"dataDeAdminissao\":\"24/07/2025\",\r\n    \"salarioBase\":1240,\r\n    \"valeTransporte\":\"240\",\r\n    \"valeAlimentacao\":700,\r\n    \"valeRefeicao\":\"300\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de09a334e2671c7936fbd7/funcionario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de09a334e2671c7936fbd7",
+						"funcionario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Funcionario Específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Gustavo\",\r\n    \"cpf\":\"09323432279\",\r\n    \"cargo\":\"Jardineiro\",\r\n    \"dataDeAdminissao\":\"24/07/2025\",\r\n    \"salarioBase\":1240,\r\n    \"valeTransporte\":\"240\",\r\n    \"valeAlimentacao\":700,\r\n    \"valeRefeicao\":\"300\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de09a334e2671c7936fbd7/funcionario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de09a334e2671c7936fbd7",
+						"funcionario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Funcionario Específico Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Gustavo\",\r\n    \"cpf\":\"09323432279\",\r\n    \"cargo\":\"Jardineiro\",\r\n    \"dataDeAdminissao\":\"24/07/2025\",\r\n    \"salarioBase\":1240,\r\n    \"valeTransporte\":\"240\",\r\n    \"valeAlimentacao\":700,\r\n    \"valeRefeicao\":\"300\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/68de09a334e2671c7936fbd7/funcionario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"68de09a334e2671c7936fbd7",
+						"funcionario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Funcionario Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Douglas\",\r\n    \"cpf\":\"09323432279\",\r\n    \"cargo\":\"Gerente de Piso\",\r\n    \"dataDeAdminissao\":\"24/07/2025\",\r\n    \"salarioBase\":1440,\r\n    \"valeTransporte\":\"340\",\r\n    \"valeAlimentacao\":400,\r\n    \"valeRefeicao\":\"400\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/funcionario/6920ff642d56808a5a537859",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"funcionario",
+						"6920ff642d56808a5a537859"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Visitante Especifico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Roger\",\r\n    \"telefone\":\"982757636\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/visitante/05809982167",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"visitante",
+						"05809982167"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Visitante Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Roberto\",\r\n    \"telefone\":\"982757636\",\r\n    \"cpf\":\"05809902167\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/apartamento/692094e32f16fe69a290101f/visitante",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apartamento",
+						"692094e32f16fe69a290101f",
+						"visitante"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Visitante Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Roger\",\r\n    \"telefone\":\"982757636\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/visitante/05809982167",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"visitante",
+						"05809982167"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Visitante Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Roger\",\r\n    \"telefone\":\"982757636\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/visitante/69210456ea20279fac9c8428",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"visitante",
+						"69210456ea20279fac9c8428"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Catraca Registro Específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/catraca/05809902167",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"catraca",
+						"05809902167"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Catraca Registro Específico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"entrou\":false,\r\n    \"catraca\":2\r\n}\r\n/*\r\n\"morador\": true Morador false Visitante\r\n\"entrou\": 1 Entrou 2 Saiu\r\n\r\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/catraca/6920e885ee17cb3ccd444806",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"catraca",
+						"6920e885ee17cb3ccd444806"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put - Catraca Registro Específico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"catraca\":2\r\n}\r\n/*\r\n\"entrou\": 1 Entrou 2 Saiu\r\n\r\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/catraca/69212369094fdc8dde5eb24e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"catraca",
+						"69212369094fdc8dde5eb24e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Catraca Registro Específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"catraca\":2\r\n}\r\n/*\r\n\"entrou\": 1 Entrou 2 Saiu\r\n\r\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/condominio/catraca/6921036da645986be2537d26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"condominio",
+						"catraca",
+						"6921036da645986be2537d26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "Sistema de Construtora\n\n\\-> Funcionários ->Encomendas\n\nConstrutora -> Condomínio -> Blocos -> Apartamentos -> Moradores/ Donos\n\n\\->Catraca ->Visitantes\n\n\\-> Espaços"
+			},
+			"response": []
+		}
+	]
+}

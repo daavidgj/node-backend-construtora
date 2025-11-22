@@ -1,54 +1,55 @@
-API REST - Sistema Imobiliário
-Descrição
+Sistema de Gestão de Construtoras e Condomínios
 
-API REST desenvolvida em Node.js e Express, simulando um sistema imobiliário que gerencia construtoras, condomínios, blocos, apartamentos e moradores.
-O projeto demonstra conceitos de rotas REST, métodos HTTP, validação de dados, respostas estruturadas em JSON, uso de Git para versionamento e documentação com Postman.
+Sistema backend em Node.js utilizando Express, MongoDB e Yup para validação.
+Permite gerenciar construtoras, condomínios, blocos, apartamentos, moradores, visitantes, funcionários, espaços, catracas e encomendas.
 
 Tecnologias Utilizadas
 
 Node.js
 
-Express.js
+Express
 
-MongoDB (via Mongoose)
+MongoDB Atlas
 
-Postman (para teste e documentação das rotas)
+Mongoose
 
-Git/GitHub (versionamento e colaboração)
+Yup (validação de dados)
 
-Instalação e Execução
+dotenv (variáveis de ambiente)
 
-Clone o repositório:
+Estrutura do Projeto
+.
+├── app.js (arquivo principal)
+├── construtora.js (modelo Mongoose)
+├── condominio.js
+├── bloco.js
+├── apartamento.js
+├── morador.js
+├── visitante.js
+├── funcionario.js
+├── espaco.js
+├── catraca.js
+├── encomenda.js
+└── .env (variáveis de ambiente)
 
-git clone https://github.com/daavidgj/node-backend-construtora.git
-
-Entre na pasta do projeto:
-
-cd nome-do-projeto
+Instalação
 
 Instale as dependências:
 
 npm install
 
-Execute a API:
+Execute o servidor:
 
 npm start
 
-A API estará disponível em:
+O servidor estará disponível em http://localhost:3000.
 
-http://localhost:3000
-
-Endpoints
-
-Link de acesso ao Postman->
-
-https://davidgj201-390019.postman.co/workspace/David-Gon%C3%A7alves's-Workspace~dce9806a-620e-41a1-81be-f38ca0546c3e/collection/48692277-857cf06d-6ee0-4ba9-beb1-52eafc339eea?action=share&creator=48692277
-
-1. Construtora
+Rotas Principais
+Construtora
 
 GET /construtora/all → Listar todas as construtoras
 
-GET /construtora/:id → Buscar construtora por ID (com condomínios e blocos)
+GET /construtora/:id → Obter detalhes de uma construtora com seus condomínios e blocos
 
 POST /construtora → Criar nova construtora
 
@@ -56,11 +57,11 @@ PUT /construtora/:id → Atualizar construtora
 
 DELETE /construtora/:id → Deletar construtora
 
-2. Condomínio
+Condomínio
 
 GET /construtora/:id/condominio/all → Listar todos os condomínios de uma construtora
 
-GET /condominio/:id → Buscar condomínio por ID (com blocos)
+GET /condominio/:id → Detalhes de um condomínio
 
 POST /construtora/:id/condominio → Criar condomínio
 
@@ -68,11 +69,11 @@ PUT /condominio/:id → Atualizar condomínio
 
 DELETE /condominio/:id → Deletar condomínio
 
-3. Bloco
+Bloco
 
 GET /condominio/:id/bloco/all → Listar blocos de um condomínio
 
-GET /condominio/bloco/:id → Buscar bloco por ID
+GET /condominio/bloco/:id → Detalhes de um bloco
 
 POST /condominio/:id/bloco → Criar bloco
 
@@ -80,9 +81,9 @@ PUT /condominio/bloco/:id → Atualizar bloco
 
 DELETE /condominio/bloco/:id → Deletar bloco
 
-4. Apartamento
+Apartamento
 
-GET /condominio/bloco/apartamento/:id → Buscar apartamento por ID
+GET /condominio/bloco/apartamento/:id → Detalhes de um apartamento
 
 POST /condominio/bloco/:idBloco/apartamento → Criar apartamento
 
@@ -90,9 +91,9 @@ PUT /condominio/bloco/apartamento/:id → Atualizar apartamento
 
 DELETE /condominio/bloco/apartamento/:id → Deletar apartamento
 
-5. Morador
+Morador
 
-GET /morador/:cpf → Buscar morador por CPF (com apartamentos)
+GET /morador/:cpf → Obter morador pelo CPF
 
 POST /condominio/bloco/apartamento/:idApartamento/morador → Cadastrar morador
 
@@ -100,48 +101,58 @@ PUT /morador/:cpf → Atualizar morador
 
 DELETE /morador/:cpf → Deletar morador
 
-########################
-#########Exemplos#######
-########################
+Visitante
 
-Exemplos de Requisição (JSON)
-Criar Construtora
-POST /construtora
-{
-"nome": "Construtora Exemplo",
-"telefone": "11999999999"
-}
+POST /apartamento/:idApartamento/visitante → Cadastrar visitante
 
-Criar Condomínio
-POST /construtora/:id/condominio
-{
-"nome": "Condomínio Central",
-"endereco": "Rua Principal, 123"
-}
+GET /visitante/:cpfVisitante → Listar visitante
 
-Criar Bloco
-POST /condominio/:id/bloco
-{
-"nome": "Bloco A",
-"andares": 5,
-"elevadores": 2,
-"escada": "Sim"
-}
+PUT /visitante/:cpfVisitante → Atualizar visitante
 
-Criar Apartamento
-POST /condominio/bloco/:idBloco/apartamento
-{
-"numero": 101,
-"metragem": 75,
-"quartos": 2,
-"banheiros": 1,
-"garagem": 1
-}
+DELETE /visitante/:cpfVisitante → Deletar visitante
 
-Criar Morador
-POST /condominio/bloco/apartamento/:idApartamento/morador
-{
-"nome": "João Silva",
-"cpf": "12345678901",
-"telefone": "11988888888"
-}
+Funcionário
+
+POST /condominio/:id/funcionario → Cadastrar funcionário
+
+GET /condominio/:id/funcionario → Listar funcionários de um condomínio
+
+PUT /condominio/funcionario/:id → Atualizar funcionário
+
+DELETE /condominio/funcionario/:cpf → Deletar funcionário
+
+Espaços
+
+POST /condominio/:id/espaco → Criar espaço
+
+GET /condominio/:id/espaco → Listar espaços de um condomínio
+
+PUT /condominio/espaco/:id → Atualizar espaço
+
+DELETE /condominio/espaco/:id → Deletar espaço
+
+Encomendas
+
+POST /apartamento/:idApartamento/encomenda → Criar encomenda
+
+GET /apartamento/:idApartamento/encomenda → Listar encomendas não recebidas
+
+PUT /encomenda/:id → Atualizar encomenda
+
+DELETE /encomenda/:id → Deletar encomenda
+
+Catraca
+
+POST /condominio/catraca/:idPessoa → Registrar entrada/saída
+
+PUT /condominio/catraca/:idCatraca → Atualizar registro
+
+GET /condominio/catraca/:idCpf → Listar registros de um CPF
+
+Observações
+
+Todas as validações são feitas com Yup.
+
+O sistema suporta relacionamentos hierárquicos: Construtora → Condomínio → Bloco → Apartamento → Morador/Visitante.
+
+Funcionalidades avançadas incluem cálculo de custo total de funcionário (salário + benefícios) e controle de catracas.

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { boolean } from "yup";
 /*
 numero: req.body.numero,
             andar: req.body.numero.charAt(0),
@@ -15,7 +16,8 @@ const apartamentoSchema = new mongoose.Schema({
     metragem: Number,
     quartos: Number,
     banheiros: Number,
-    garagem: Number,
+    qtdGaragem: Number,
+    garagem: Boolean,
     idBloco: { type: mongoose.Schema.Types.ObjectId, ref: "Bloco" },
 });
 
